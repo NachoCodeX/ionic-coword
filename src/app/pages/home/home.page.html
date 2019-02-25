@@ -1,0 +1,55 @@
+<main class="main">
+  <header class="main-header">
+    <div class="search-field">
+      <input (focus)="onFocus()" (blur)="onBlur()" [(ngModel)]="text" (ngModelChange)="onChange($event)" placeholder="Search..."
+        class="search-input" type="text">
+    </div>
+  </header>
+
+
+  <ng-template [ngIf]="isLoading" [ngIfElse]="listContent">
+    <ul class="main-ul main-ul--loading">
+      <span>
+        <fa-icon [icon]="searchIcon"></fa-icon> LOADING...
+      </span>
+    </ul>
+  </ng-template>
+
+  <ng-template #listContent>
+
+    <ul *ngIf="words.length >0 && !isLoading" class="main-ul">
+      <app-word-item (onClick)="onItemClick($event)" *ngFor="let word of words" [_id]="word._id" [source]="word.source"
+        [word]="word.word"></app-word-item>
+      <!-- <p (click)="test()">AAAAAAAAAAAAAAAAA</p> -->
+    </ul>
+
+    <ul *ngIf="!words.length && !isLoading && text.length>0" class="main-ul main-ul--not-found">
+      <div class="text-not-found-wrapper">
+        <fa-icon class="text-not-found-icon" [icon]="sadCryIcon"></fa-icon>
+        <p class="text-not-found"><span class="text-not-found highlight">{{text}}</span> was not found</p>
+      </div>
+    </ul>
+  </ng-template>
+  <!-- <ul class="main-ul main-ul--loading" *ngIf="isLoading">
+    <span>LOADING...</span>
+  </ul>
+
+
+  <ul *ngIf="words.length >0 && !isLoading" class="main-ul">
+    <li *ngFor="let word of words" class="item">
+      <p>{{word.word}}</p>
+      <p>Source: <a target="blank" [href]="word.source">{{word.source}}</a></p>
+    </li>
+  </ul>
+
+  <ul *ngIf="!words.length && !isLoading && text.length>0" class="main-ul main-ul--not-found">
+    <span>{{text}} Not found :c</span>
+  </ul> -->
+
+  <!-- <ng-template class="main-ul main-ul--not-found" #notFound>
+    <ul *ngIf="words.length===0 && !isLoading" class="main-ul main-ul--not-found">
+      <span class="main-ul-span">{{text}} Not found! :c</span>
+    </ul>
+  </ng-template> -->
+
+</main>

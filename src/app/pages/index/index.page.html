@@ -1,0 +1,16 @@
+<ion-content>
+  <div class="wrapper">
+
+    <header [class.searching]="isSearching" class="header">
+      <img class="logo" src="../../assets/logocw.png" alt="logo">
+      <h1 class="title">CoWord</h1>
+    </header>
+
+    <ion-content [class.searching]="isSearching" class="main">
+      <ion-router-outlet name="main"></ion-router-outlet>
+    </ion-content>
+    <!-- <div class="main"> -->
+    <!-- </div> -->
+
+  </div>
+</ion-content>

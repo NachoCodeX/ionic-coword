@@ -1,0 +1,4 @@
+<li [routerLink]="['/index',{outlets:{main:['definition',_id]}}]" (click)="onClick.emit(true)" class="item">
+  <p>{{word}}</p>
+  <p>Source: <a target="blank" [href]="source">{{source}}</a></p>
+</li>

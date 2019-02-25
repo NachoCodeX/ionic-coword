@@ -1,5 +1,7 @@
 {
   "name": "CoWord",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

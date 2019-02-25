@@ -1,0 +1,17 @@
+.item{
+    background: lighten(#101010,10%);
+    padding: 10px;
+    transition: all ease .3s;
+    margin-bottom: 10px;
+    // max-width: 500px;
+
+    p{
+        color: gray;
+    }
+    &:hover{
+        background: lighten(#101010,5%);
+        p{
+            color: #fff;
+        }
+    }
+}

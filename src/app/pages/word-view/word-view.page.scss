@@ -1,0 +1,120 @@
+@import '../../styles/mixins';
+
+$padding:15px; 
+
+.main{
+    // background-color: blue;
+    background-color: var(--ion-color-primary);
+    // height: calc(100vh - 3rem);
+    // min-height: 100%;
+    height: 100%;
+}
+
+.header{
+    // background: red;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $padding;
+    background-color:lighten(#101010,5%);
+    &-icon{
+        color: #fff; 
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    &-back{
+        display: flex;
+    }
+    &-logo{
+        &-img{
+            display: block;
+            $s:30px;
+            height: $s;
+            width: $s;
+        }
+    }
+
+    .back-arrow{
+        // color: #fff;
+        
+        margin-right: 10px;
+        // background-color: blue; 
+    }
+    span{
+        padding: 0;
+        margin: 0;
+        color: #fff;
+     
+    }
+}
+
+.word-def-{
+    &wrapper{
+        display: grid;
+        grid-template-rows: .1fr .8fr .1fr;
+        // flex-direction: column;
+        padding: $padding;
+        overflow-y: scroll;
+        height: 90%;
+    }
+    &header{
+        &-title{
+            color: #fff;
+            font-size: 1.5rem;
+        }
+    }
+    &main{
+        height: 100%;
+        // background: yellowgreen;
+        &-paragraph{
+            color: #fff;
+            line-height: 2;
+            font-size: 16px;
+
+        }
+    }
+    &footer{
+        // background: red;
+        margin-top: 10px;
+        &-list{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            // background: red;
+            &-item{
+                $s:30px;
+                width: $s; 
+                height: $s;
+                background: #fff;
+                border-radius: 50%;
+                @include centerXY();
+                cursor: pointer;
+                transition:  all ease .3s;
+                &-icon{
+                    color: #101010;
+                    font-size: 18px;
+                    // color: inherit;
+                    // &:hover
+                } 
+            }
+
+        }
+    }
+}
+
+.loading-{
+    &wrapper{
+        @include centerXY();
+        color: #fff;
+        height: 100%;
+    }
+    &text{
+
+    }
+    &icon{
+        color: #fff;
+        font-size: 1.2rem;
+    }
+}

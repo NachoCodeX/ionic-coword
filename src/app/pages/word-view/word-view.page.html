@@ -1,0 +1,47 @@
+<main class="main">
+  <header class="header">
+    <div class="header-back">
+      <fa-icon (click)="Onback()" class="header-icon back-arrow" [icon]="backIcon"></fa-icon>
+    </div>
+    <div class="header-logo">
+      <img class="header-logo-img" src="../../../assets/logocw.png" alt="">
+    </div>
+    <div class="header-search">
+      <fa-icon class="header-icon search" [icon]="searchIcon"></fa-icon>
+    </div>
+
+  </header>
+  <article *ngIf="!isLoading; else loading" class="word-def-wrapper">
+    <header class="word-def-header">
+      <span class="word-def-header-title">{{word.word}}</span>
+    </header>
+
+    <div class="word-def-main">
+      <p class="word-def-main-paragraph">
+        {{word.definition}}
+      </p>
+    </div>
+    <footer class="word-def-footer">
+      <ul class="word-def-footer-list">
+        <li class="word-def-footer-list-item">
+          <fa-icon class="word-def-footer-list-item-icon" [icon]="authorIcon"></fa-icon>
+        </li>
+        <li class="word-def-footer-list-item">
+          <fa-icon class="word-def-footer-list-item-icon" [icon]="createdIcon"></fa-icon>
+        </li>
+        <li class="word-def-footer-list-item">
+          <fa-icon class="word-def-footer-list-item-icon" [icon]="linkIcon"></fa-icon>
+        </li>
+
+      </ul>
+    </footer>
+  </article>
+  <ng-template #loading>
+    <article class="loading-wrapper">
+      <span class="loading-text">
+        <fa-icon class="loading-icon" [icon]="searchIcon"></fa-icon>
+        Loading...
+      </span>
+    </article>
+  </ng-template>
+</main>
